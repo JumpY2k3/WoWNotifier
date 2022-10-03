@@ -166,6 +166,9 @@ function Get-WoWQueue {
 '@
 
     $proc = Get-Process wowclassic | Select-Object -First 1
+    if (-not ($proc)) {
+        Get-Process | Where-Object { $_.MainWindowTitle -like '*World of Warcraft*' } | Select-Object -First 1
+    }
     $rect = [Rect]::new()
     [User32]::GetWindowRect($proc.MainWindowHandle, [ref]$rect)
 
@@ -384,6 +387,33 @@ function WoWNotifier {
 
         Get-WoWQueue
         $WoWAlert = (Get-Ocr $path\WoWNotifier_Img.png).Text
+
+        if (-not ($WoWAlert)) { 
+            # set messages           
+            $msg = "No Game detected! Check if WoW is running!"
+            
+            if ($playSound -eq "Yes") {
+                play-Sound "\sound_failed.wav"
+            }
+            Send-Alert
+
+            if ($script:cancelLoop) {
+                Return
+            }
+
+            $label_status.ForeColor = "#7CFC00"
+            $label_status.text = "No Game detected! `r`n Check if WoW is running!"
+            $label_status.Refresh()
+
+            if ($stopOnQueue -eq "Yes") {
+                $button_stop.Enabled = $True
+                $button_stop.Visible = $True
+                $button_start.Enabled = $False
+                $button_start.Visible = $False
+            }
+            # Restart Check routine
+            WoWNotifier
+        }
        
         # Check if queue screen is shown (Word "Position" in OCR detected)
         if ($WoWAlert -like "*Position*") {
