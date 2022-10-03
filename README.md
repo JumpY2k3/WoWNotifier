@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16124598/193567201-acc31773-9212-418a-b1da-9300371e7a87.png">
+</p>
+
 # WoW Notifier for World of Warcraft classic
 Sends periodic messages of your position in the WoW login queue and alerts on disconnect or when queue has ended.
 
@@ -52,8 +56,9 @@ At least one of the below notification types is required. Or you can set up all 
 Set discord to $True to enable this notification type.
 Enter in the discord webhook for the channel you would like the notification to go to. (May create your own server for this) 
 Discord > Click cogwheel next to a channel to edit it > Webhooks > Create webhook.
-See this quick video I found on Youtube if you need further help. It's very easy. Do not share this Webhook with anyone else.  
+See this quick video I found on Youtube if you need further help. It's very easy. Do not share this Webhook with anyone else.
 [Create Discord Webhook](https://www.youtube.com/watch?v=zxi926qhP7w)  
+**Important:** If using the Discord notification type, the Desktop Discord App on your computer must *not* be running. (Discord does not send mobile notifications if you are Active in another Discord app =( See Dev post [here](https://twitter.com/discordapp/status/720723876934582272))
 
 * **Pushover**  
 Set pushover to $True to enable this notification type.  
@@ -125,4 +130,7 @@ By default it goes to your application directory.
 
 **Special Thanks to @Ninthwalker for his initial version of the script. Check out his Repositories: https://github.com/ninthwalker**
 
-## Screenshots  
+## Screenshots
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/16124598/193568545-52cb03fb-77fc-4524-9268-b42ca56465d1.png">
+</p>
