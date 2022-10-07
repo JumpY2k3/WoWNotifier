@@ -16,6 +16,8 @@
 # - Add function to play sound on fail / success                        #
 # - Add language detection GER / ENG                                    #
 # - Major changes in routine. Check for disconnect and ended queue      #
+## 1.2                                                                  #
+# - Change code for Support of Windows 11 and DirectX 12                #
 #########################################################################
 
 using namespace Windows.Storage
@@ -178,7 +180,7 @@ function Get-WoWQueue {
     $graphics = [System.Drawing.Graphics]::FromImage($bmp)
     $hdcBitmap = $graphics.GetHdc()
 
-    [User32]::PrintWindow($proc.MainWindowHandle, $hdcBitmap, 0)
+    [User32]::PrintWindow($proc.MainWindowHandle, $hdcBitmap, 2)
 
     $graphics.ReleaseHdc($hdcBitmap)
     $graphics.Dispose()
