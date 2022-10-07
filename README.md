@@ -16,7 +16,7 @@ Default settings should work for most people and offer a high probability of bei
 Just set up at least one notification app and you are good to go!  
 
 ## Details/Requirements
-1. Windows 10
+1. Windows 10 / 11
 2. Powershell 3.0+ (Comes with WIN10)
 3. .Net Framework 3.5+ (Usually already on Windows 10 as well)
 4. The World of Warcraft classic game (installed on your Windows 10 computer)
